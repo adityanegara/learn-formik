@@ -1,0 +1,16 @@
+A. Pengertian
+: Formik ialah library yang membantu dalam pembuatan validasi Formik
+
+B. Manfaat Formik
+: 1. Mendapatkan nilai dari dalam state Formik
+  2. Validasi dan pesan error
+  3. Menghandle submisi form
+
+C. Kelebihan Formik dari Redux Formik
+: 1. State pada form bersifat tidak kekal dan lokal, menyimpannya
+   pada global state tidak dianjurkan
+  2. Redux Form memanggil seluruh reducer setiap kali pencetan keyboard.
+  3. Formik memiliki size lebih kecil
+
+D. Instalasi
+: npm install formik --save
