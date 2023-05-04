@@ -32,3 +32,31 @@ validasi. Lalu dapat dimasukan pada function validationSchema
          .required('Required'),
        email: Yup.string().email('Invalid email address').required('Required'),
     })
+
+E. Mengurangi BoilerPlate
+: Dapat dilihat penggunaan input sangat spesifik memberitahukan
+onChange, handleChange, onBlur handleBlur.
+    <input
+        id="firstName"
+        name="firstName"
+        type="text"
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.firstName}
+      />
+ Hal ini dapat dihindari dengan method 'formik.getFieldProps()'
+ yang mengembalikan onChange, onBlur, value, checked 
+
+    E.1. Penggunaan formik.getFieldProps()
+    :  <input
+        id="firstName"
+        type="text"
+        {...formik.getFieldProps('firstName')}
+      />
+
+F. <Formik/>
+: Dengan membungkus form dengan component <Formik/> kita tidak harus 
+menggunakan hook useFormik lagi
+
+G. Field, Form, ErrorMessage 
+: Component yang sudah dibinding oleh <Formik/> sehingga mengurangi boilerplate
