@@ -1,0 +1,34 @@
+A. Basic
+: - Formik menggunakan id dan name html attribute yang
+sama dengan initialValues
+  - Dapat menggunakan function handleChange yang sama disetiap input
+  - Mengakses value input dengan nama yang sama (email->formik.values.email)
+
+B. Validasi
+: Validasi dilakukan oleh built in function validate yang mengambil parameter
+values dan mengembalikan object error
+
+C. Touched
+: Terkadang kita ingin melakukan validasi apakah suatu input sudah
+disentuh atau tidak. formik.touched akan membantu untuk mengcek apakah input
+sudah disentuh
+
+D. Validasi dengan Yup
+: Formik menganjurkan menggunakan library 'Yup' untuk melakukan
+validasi. Lalu dapat dimasukan pada function validationSchema
+  D.1. Instalasi
+  : npm install yup --save
+
+  D.2. Syntax import
+  : import * as Yup from 'yup'
+
+  D.3. Contohh penggunaan
+  : validationSchema: Yup.object({
+       firstName: Yup.string()
+         .max(15, 'Must be 15 characters or less')
+         .required('Required'),
+       lastName: Yup.string()
+         .max(20, 'Must be 20 characters or less')
+         .required('Required'),
+       email: Yup.string().email('Invalid email address').required('Required'),
+    })
